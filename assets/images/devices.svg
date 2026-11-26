@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 510">
+<defs>
+  <linearGradient id="case" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#7288aa"/><stop offset="1" stop-color="#283753"/></linearGradient>
+  <linearGradient id="base" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#9cafcd"/><stop offset="1" stop-color="#4d6280"/></linearGradient>
+  <radialGradient id="shadow"><stop stop-color="#040813" stop-opacity=".75"/><stop offset="1" stop-color="#040813" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="503" cy="386" rx="383" ry="41" fill="url(#shadow)"/>
+<g transform="translate(118 143) skewY(-6)">
+  <rect width="220" height="259" rx="17" fill="url(#case)" stroke="#8ca1c1"/>
+  <rect x="9" y="9" width="202" height="241" rx="10" fill="#e4edfb"/>
+  <path d="M9 20a11 11 0 0 1 11-11h180a11 11 0 0 1 11 11v20H9" fill="#f7faff"/>
+  <text x="23" y="30" font-family="system-ui" font-size="11" font-weight="700" fill="#233758">ATELIÊ NORTE</text>
+  <text x="23" y="73" font-family="system-ui" font-size="20" font-weight="750" fill="#233758">Feito para durar.</text>
+  <rect x="23" y="94" width="174" height="139" rx="8" fill="#aebfea"/>
+  <g fill="none" stroke="#475e9f" stroke-width="1.4" transform="translate(119 157) rotate(-34)">
+    <ellipse rx="15" ry="30"/><ellipse rx="25" ry="35"/><ellipse rx="36" ry="40"/><ellipse rx="47" ry="45"/><ellipse rx="59" ry="50"/>
+  </g>
+</g>
+<g transform="translate(293 95)">
+  <path d="M15 0h412q13 0 13 13v248H0V15Q0 0 15 0Z" fill="url(#case)" stroke="#8498b8"/>
+  <rect x="10" y="10" width="420" height="237" rx="7" fill="#e9f0fe"/>
+  <rect x="10" y="10" width="420" height="34" rx="7" fill="#f8fbff"/>
+  <rect x="24" y="19" width="16" height="16" rx="4" fill="#3479f8"/>
+  <text x="48" y="31" font-family="system-ui" font-size="11" font-weight="700" fill="#233758">ORBIT</text>
+  <text x="25" y="73" font-family="system-ui" font-size="23" font-weight="750" fill="#162a51">Visão geral</text>
+  <g fill="#fff"><rect x="25" y="87" width="123" height="59" rx="6"/><rect x="159" y="87" width="123" height="59" rx="6"/><rect x="293" y="87" width="123" height="59" rx="6"/><rect x="25" y="155" width="391" height="78" rx="6"/></g>
+  <g font-family="system-ui" fill="#31476b"><g font-size="10"><text x="36" y="105">Pedidos</text><text x="170" y="105">Produtos</text><text x="304" y="105">Entregas</text></g><g font-size="20" font-weight="750"><text x="36" y="131">128</text><text x="170" y="131">34</text><text x="304" y="131">92</text></g></g>
+  <path d="M35 171h370m-370 17h370m-370 17h370m-370 17h370" stroke="#dee7f6" fill="none"/>
+  <path d="m36 219 46-15 45 5 46-18 46 9 46-21 47 8 47-14 46-6" stroke="#3479f8" stroke-width="3" fill="none"/>
+  <path d="m0 255-47 35q-3 8 12 10h510q15-1 12-10l-47-35z" fill="url(#base)" stroke="#a6bbd8"/>
+  <path d="m37 259-18 13h387l-15-13z" fill="#293a58"/>
+  <path d="m153 279-10 8h153l-10-8z" fill="#657b9e"/>
+</g>
+<g transform="translate(744 196) skewY(5)">
+  <rect width="104" height="193" rx="16" fill="url(#case)" stroke="#92a6c7"/>
+  <rect x="6" y="6" width="92" height="181" rx="11" fill="#eff6f6"/>
+  <rect x="39" y="12" width="26" height="5" rx="3" fill="#475a79"/>
+  <text x="13" y="41" font-family="system-ui" font-size="7" font-weight="800" fill="#204047">LINHA ESSENCIAL</text>
+  <text x="13" y="61" font-family="system-ui" font-size="11" font-weight="750" fill="#204047">Coleção</text>
+  <rect x="13" y="73" width="78" height="45" rx="5" fill="#b9d5c9"/>
+  <ellipse cx="52" cy="94" rx="18" ry="10" transform="rotate(-22 52 94)" fill="#588373"/>
+  <rect x="13" y="125" width="78" height="46" rx="5" fill="#e6d7bb"/>
+  <ellipse cx="52" cy="148" rx="18" ry="10" transform="rotate(-22 52 148)" fill="#97856c"/>
+</g>
+</svg>
