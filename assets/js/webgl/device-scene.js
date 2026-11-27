@@ -5,9 +5,9 @@ import { keyboardTexture, screenTexture } from './textures.js';
 import { press } from '../ui.js';
 
 const models = [
-    { name: 'tablet', width: 2.04, height: 2.70, thickness: .14, radius: .15, border: .10, x: -2.88, y: -.16, z: .22, angle: .22 },
+    { name: 'tablet', width: 2.04, height: 2.70, thickness: .14, radius: .15, border: .10, x: -3.35, y: -.16, z: .22, angle: .22 },
     { name: 'notebook', width: 4.26, height: 2.57, thickness: .17, radius: .14, border: .10, x: .13, y: .17, z: -.2, angle: -.13 },
-    { name: 'smartphone', width: 1.21, height: 2.39, thickness: .16, radius: .19, border: .065, x: 2.79, y: -.39, z: .65, angle: -.30 },
+    { name: 'smartphone', width: 1.21, height: 2.39, thickness: .16, radius: .19, border: .065, x: 3.30, y: -.39, z: .65, angle: -.30 },
 ];
 const zero = [0, 0, 0];
 
@@ -51,7 +51,7 @@ export function initDevices(card) {
     const defaultDevice = choices[defaultIndex].dataset.deviceChoice;
     let current = defaultDevice;
     let visible = false, scene, gl, frame = 0, last = 0, texturesDirty = true;
-    let yaw = 0, pitch = 0, pointerYaw = 0, pointerPitch = 0, drag = null;
+    let yaw = 0, pitch = 0, drag = null;
     let cameraYaw = 0, cameraPitch = 0;
     const weights = Object.fromEntries(models.map(model => [model.name, Number(model.name === current)]));
     const configuredQuality = Math.max(.75, Number(card.dataset.quality) || 1.65);
@@ -85,7 +85,7 @@ export function initDevices(card) {
         const { engine, devices, base, keyboard, keys, touchpad, shadow } = scene;
         const dark = document.documentElement.dataset.theme === 'dark' ||
             (document.documentElement.dataset.theme === 'auto' && system.matches);
-        const targetYaw = yaw + pointerYaw, targetPitch = pitch + pointerPitch;
+        const targetYaw = yaw, targetPitch = pitch;
         const dt = last ? Math.min(now - last, 45) : 16;
         last = now;
         // A aproximação exponencial mantém o movimento estável em monitores com taxas diferentes.
@@ -186,15 +186,11 @@ export function initDevices(card) {
         if (drag?.id === event.pointerId) {
             yaw = Math.max(-.49, Math.min(.49, drag.yaw + (event.clientX - drag.x) * .004));
             if (event.pointerType === 'mouse') pitch = Math.max(-.21, Math.min(.21, drag.pitch + (event.clientY - drag.y) * .003));
-        } else if (event.pointerType === 'mouse' && !motion.matches) {
-            const rect = canvas.getBoundingClientRect();
-            pointerYaw = ((event.clientX - rect.left) / rect.width - .5) * .18;
-            pointerPitch = ((event.clientY - rect.top) / rect.height - .5) * .13;
         }
         schedule();
     });
     for (const name of ['pointerup', 'pointercancel', 'lostpointercapture']) canvas.addEventListener(name, () => { drag = null; });
-    canvas.addEventListener('pointerleave', () => { pointerYaw = 0; pointerPitch = 0; schedule(); });
+
     canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); scene = null; fallback(); });
     canvas.addEventListener('webglcontextrestored', initialize);
     document.addEventListener('portfolio-theme', update);
@@ -213,7 +209,7 @@ export function initDevices(card) {
         scene = null;
     });
     addEventListener('pageshow', event => { if (event.persisted && gl && !gl.isContextLost()) initialize(); });
-    motion.addEventListener('change', () => { pointerYaw = 0; pointerPitch = 0; schedule(); });
+    motion.addEventListener('change', () => { schedule(); });
     if ('ResizeObserver' in window) new ResizeObserver(schedule).observe(canvas);
     else addEventListener('resize', schedule);
     if ('IntersectionObserver' in window) {

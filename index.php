@@ -5,7 +5,7 @@ define('PORTFOLIO_ENTRY', true);
 $config = require __DIR__ . '/config/portfolio.php';
 require __DIR__ . '/includes/helpers.php';
 
-$theme = in_array($config['theme'], ['light', 'dark', 'auto'], true) ? $config['theme'] : 'light';
+$theme = 'dark';
 $canonical = https_url($config['seo']['canonical']);
 $email = filter_var($config['email'], FILTER_VALIDATE_EMAIL) ? $config['email'] : '';
 $mailto = $email ? 'mailto:' . str_replace('%40', '@', rawurlencode($email)) : '';
@@ -23,7 +23,7 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
 header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; connect-src 'self'");
 ?>
 <!doctype html>
-<html lang="pt-BR" data-theme="<?= e($theme) ?>" data-default-theme="<?= e($theme) ?>">
+<html lang="pt-BR" data-theme="dark" data-resolved-theme="dark" data-portfolio-model="5">
 <?php require __DIR__ . '/includes/head.php'; ?>
 <body id="topo">
 <a href="#conteudo" class="skip">Ir para o conteúdo</a>

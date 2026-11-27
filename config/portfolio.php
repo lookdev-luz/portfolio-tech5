@@ -7,10 +7,10 @@ if (!defined('PORTFOLIO_ENTRY')) {
 
 return [
     'name' => 'Next Interface',
-    'full_name' => '',
-    'role' => 'Desenvolvimento web independente',
+    'full_name' => 'Bianca Leal (demonstração)',
+    'role' => 'Estudante de desenvolvimento de interfaces',
     'headline' => 'Interfaces que fazem sentido.',
-    'description' => 'Sites, sistemas e experiências digitais sob medida para apresentar seu negócio e simplificar sua rotina.',
+    'description' => 'Estudos demonstrativos de interfaces web, componentes e experiências acessíveis.',
     'bio' => 'Estou construindo minha trajetória em desenvolvimento de software com projetos de estudo e demonstrações. Meu foco é transformar necessidades práticas em interfaces claras, fáceis de usar e manter.',
     'photo' => '',
     'approach' => 'Começo pelas tarefas que a interface precisa resolver. A partir delas, defino os fluxos, testo em telas diferentes e organizo o código para facilitar mudanças.',
@@ -27,8 +27,8 @@ return [
     'theme' => 'light',
     'visual' => ['quality' => 1.65, 'default_device' => 'notebook'],
     'seo' => [
-        'title' => 'Next Interface | Desenvolvimento web independente',
-        'canonical' => 'https://tech5.lucasluz.me/',
+        'title' => 'Bianca Leal | Estudos em interfaces',
+        'canonical' => '',
         'index' => false,
     ],
     'technology' => [

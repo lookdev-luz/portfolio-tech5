@@ -23,9 +23,10 @@ $person = array_filter([
 <?php if (isset($person['name'])): ?>
 <script type="application/ld+json"><?= json_encode($person, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE) ?></script>
 <?php endif ?>
-<script src="assets/js/theme.js"></script>
+<script src="assets/js/theme-control.js"></script>
 <link rel="icon" href="assets/icons/mark.svg" type="image/svg+xml">
 <?php foreach (['main', 'themes', 'layout', 'components', 'responsive'] as $sheet): ?><link rel="stylesheet" href="assets/css/<?= $sheet ?>.css">
 <?php endforeach ?>
+<link rel="stylesheet" href="assets/css/theme-control.css">
 <script type="module" src="assets/js/main.js"></script>
 </head>
